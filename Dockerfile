@@ -32,3 +32,16 @@ RUN apt-get update && apt-get upgrade -q -y && apt-get install -q -y \
 # setup environment
 EXPOSE 8080
 EXPOSE 7681
+
+#Cloning turtlebot env
+RUN git clone https://github.com/AAAI-DISIM-UnivAQ/JetsonTK1-install-ROS-Kobuki-Astra \
+    cd JetsonTK1-install-ROS-Kobuki-Astra \
+    sudo chmod +x * \
+    ./1-Setup-base.sh \
+    ./2-grinch-kernel.sh \
+    ./3-Install-ROS.sh \
+    ./4-install-indigo-kobuki.sh \
+    ./5-catkin-install-create_ws.sh \
+    ./6-install-astra-camera.sh \
+    ./7-set-remote-ros-scripts.sh \
+    ./8-remove-downloads.sh
