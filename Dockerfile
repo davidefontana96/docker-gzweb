@@ -38,7 +38,7 @@ RUN git clone https://github.com/AAAI-DISIM-UnivAQ/JetsonTK1-install-ROS-Kobuki-
 
 RUN cd JetsonTK1-install-ROS-Kobuki-Astra
 
-RUN chmod +x *
+RUN sudo chmod +x *
 
 RUN ./1-Setup-base.sh
 
