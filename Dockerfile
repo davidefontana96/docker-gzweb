@@ -34,14 +34,24 @@ EXPOSE 8080
 EXPOSE 7681
 
 #Cloning turtlebot env
-RUN git clone https://github.com/AAAI-DISIM-UnivAQ/JetsonTK1-install-ROS-Kobuki-Astra \
-    cd JetsonTK1-install-ROS-Kobuki-Astra \
-    sudo chmod +x * \
-    ./1-Setup-base.sh \
-    ./2-grinch-kernel.sh \
-    ./3-Install-ROS.sh \
-    ./4-install-indigo-kobuki.sh \
-    ./5-catkin-install-create_ws.sh \
-    ./6-install-astra-camera.sh \
-    ./7-set-remote-ros-scripts.sh \
-    ./8-remove-downloads.sh
+RUN git clone https://github.com/AAAI-DISIM-UnivAQ/JetsonTK1-install-ROS-Kobuki-Astra
+
+RUN cd JetsonTK1-install-ROS-Kobuki-Astra
+
+RUN chmod +x *
+
+RUN ./1-Setup-base.sh
+
+RUN ./2-grinch-kernel.sh
+
+RUN ./3-Install-ROS.sh
+
+RUN ./4-install-indigo-kobuki.sh
+
+RUN ./5-catkin-install-create_ws.sh
+
+RUN ./6-install-astra-camera.sh
+
+RUN ./7-set-remote-ros-scripts.sh
+
+RUN ./8-remove-downloads.sh
