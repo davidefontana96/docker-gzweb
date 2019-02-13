@@ -34,5 +34,5 @@ EXPOSE 8080
 EXPOSE 7681
 
 #Cloning turtlebot env
-RUN git clone https://github.com/AAAI-DISIM-UnivAQ/JetsonTK1-install-ROS-Kobuki-Astra && cd /JetsonTK1-install-ROS-Kobuki-Astra && ls -la
+RUN git clone https://github.com/AAAI-DISIM-UnivAQ/JetsonTK1-install-ROS-Kobuki-Astra && cd /JetsonTK1-install-ROS-Kobuki-Astra && sudo chmod +x *.sh && ./1-Setup-base.sh
 	
