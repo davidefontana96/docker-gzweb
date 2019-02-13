@@ -36,7 +36,7 @@ EXPOSE 7681
 #Cloning turtlebot env
 RUN git clone https://github.com/AAAI-DISIM-UnivAQ/JetsonTK1-install-ROS-Kobuki-Astra
 
-WORKDIR cd $PWD/JetsonTK1-install-ROS-Kobuki-Astra
+RUN cd /JetsonTK1-install-ROS-Kobuki-Astra
 
 RUN ls -la
 
