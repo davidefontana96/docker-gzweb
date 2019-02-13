@@ -36,22 +36,4 @@ EXPOSE 7681
 #Cloning turtlebot env
 RUN git clone https://github.com/AAAI-DISIM-UnivAQ/JetsonTK1-install-ROS-Kobuki-Astra
 
-RUN cd /JetsonTK1-install-ROS-Kobuki-Astra
 
-RUN ls -la
-
-RUN ./1-Setup-base.sh
-
-RUN ./2-grinch-kernel.sh
-
-RUN ./3-Install-ROS.sh
-
-RUN ./4-install-indigo-kobuki.sh
-
-RUN ./5-catkin-install-create_ws.sh
-
-RUN ./6-install-astra-camera.sh
-
-RUN ./7-set-remote-ros-scripts.sh
-
-RUN ./8-remove-downloads.sh
