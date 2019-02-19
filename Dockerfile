@@ -28,3 +28,20 @@ RUN apt-get install -q -y \
 
 # clone gzweb
 RUN hg clone https://bitbucket.org/osrf/gzweb ~/gzweb
+
+# build gzweb
+RUN cd ~/gzweb \
+    && hg up default \
+    && ./deploy.sh -m
+
+# setup environment
+EXPOSE 8080
+EXPOSE 7681
+
+# make a missing folder
+CMD mkdir /root/gzweb/http/client/assets
+# download models & assets
+CMD cd /root/gzweb && ./deploy.sh -m -t
+
+# run gzserver and gzweb
+# CMD ./root/gzweb/start_gzweb.sh && gzserver
