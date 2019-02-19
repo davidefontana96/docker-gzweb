@@ -1,16 +1,8 @@
-# This is an auto generated Dockerfile for ros:robot
-# generated from docker_images/create_ros_image.Dockerfile.em
-FROM ros:indigo-ros-base-trusty
+# derived from http://github.com/osrf/docker_images/blob/master/gazebo/gazebo7/gzweb7/Dockerfile
 
-# install ros packages
-RUN apt-get update && apt-get install -y \
-    ros-indigo-robot=1.1.6-0* \
-    && rm -rf /var/lib/apt/lists/*
-
-MAINTAINER davidefontana96 davidefontana96.df@gmail.com
-
-# ROS configuration
-RUN export ROS_MASTER_URI="http://127.0.0.1:11311" && export ROS_HOSTNAME="127.0.0.1" && export ROS_IP="127.0.0.1"
+FROM gazebo:libgazebo7
+# originally from MAINTAINER Steven Peters scpeters+buildfarm@osrfoundation.org
+MAINTAINER Fontana Davide davidefontana96.df@gmail.com
 
 # install packages
 RUN apt-get update && apt-get upgrade -q -y && apt-get install -q -y \
@@ -29,9 +21,10 @@ RUN apt-get update && apt-get upgrade -q -y && apt-get install -q -y \
     psmisc\
     && rm -rf /var/lib/apt/lists/*
 
-# setup environment
-EXPOSE 8080
-EXPOSE 7681
+# install gazebo packages
+RUN apt-get install -q -y \
+    libgazebo7-dev \
+    && rm -rf /var/lib/apt/lists/*
 
-#Cloning turtlebot env
-RUN git clone https://github.com/AAAI-DISIM-UnivAQ/JetsonTK1-install-ROS-Kobuki-Astra
+# clone gzweb
+RUN hg clone https://bitbucket.org/osrf/gzweb ~/gzweb
