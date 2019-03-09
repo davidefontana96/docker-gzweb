@@ -2,7 +2,7 @@
 # generated from docker_images/create_ros_image.Dockerfile.em
 FROM osrf/ros:indigo-desktop-full
 
-MAINTAINER thecurlyprogrammer sandro@thecurlyprogrammer.com
+MAINTAINER davidefontana96 davidefontana96.df@gmail.com
 
 # ROS configuration
 RUN export ROS_MASTER_URI="http://127.0.0.1:11311" && export ROS_HOSTNAME="127.0.0.1" && export ROS_IP="127.0.0.1"
